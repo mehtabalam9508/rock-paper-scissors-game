@@ -1,0 +1,304 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: times new roman;
+
+    background: linear-gradient(
+        135deg,
+        #07A3B2,
+        #D9ECC7
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #222;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 35px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 20px 50px rgba(60, 40, 60, 0.25);
+}
+
+@keyframes containerAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Heading */
+h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* Score Board */
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.score {
+    width: 140px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.score:hover {
+    transform: translateY(-4px);
+}
+
+.score h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.score span {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Result */
+.result {
+    margin: 20px 0;
+    min-height: 30px;
+}
+
+.result h2 {
+    font-size: 22px;
+}
+
+/* Result Animation */
+.result-animation {
+    animation: resultPop 0.5s ease;
+}
+
+@keyframes resultPop {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Choices */
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.choice {
+    width: 130px;
+    height: 130px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+    transition: all 0.25s ease;
+}
+
+/* Button Hover */
+.choice:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Click */
+.choice:active {
+    transform: scale(0.9);
+}
+
+.choice span {
+    font-size: 15px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* Selected Move Animation */
+.move-animation {
+    animation: movePop 0.5s ease;
+}
+
+@keyframes movePop {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Selected Moves */
+.moves {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.move {
+    width: 220px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.move h3 {
+    font-size: 15px;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+.move p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Restart Button */
+#restart-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #141e30;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#restart-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#restart-btn:active {
+    transform: scale(0.95);
+}
+
+/* Winning Effect */
+.win-effect {
+    animation: winPulse 0.7s ease;
+}
+
+@keyframes winPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Losing Effect */
+.lose-effect {
+    animation: loseShake 0.5s ease;
+}
+
+@keyframes loseShake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+
+    .game-container {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .choices {
+        gap: 10px;
+    }
+
+    .choice {
+        width: 95px;
+        height: 95px;
+        font-size: 32px;
+    }
+
+    .moves {
+        gap: 10px;
+    }
+
+    .move {
+        width: 160px;
+    }
+}

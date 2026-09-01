@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rock Paper Scissors Game</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1 style="font-family: times new roman">Rock Paper Scissors</h1>
+        <p class="subtitle" style="color: aliceblue;">Choose your move and play against the computer!</p>
+
+        <!-- Score Board -->
+        <div class="score-board">
+            <div class="score">
+                <h3>You</h3>
+                <span id="player-score">0</span>
+            </div>
+
+            <div class="score">
+                <h3>Computer</h3>
+                <span id="computer-score">0</span>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div class="result">
+            <h2 id="result-text">Make Your Move!</h2>
+        </div>
+
+        <!-- Choices -->
+        <div class="choices">
+
+            <button class="choice" id="rock">
+                🪨
+                <span>Rock</span>
+            </button>
+
+            <button class="choice" id="paper">
+                📄
+                <span>Paper</span>
+            </button>
+
+            <button class="choice" id="scissors">
+                ✂️
+                <span>Scissors</span>
+            </button>
+
+        </div>
+
+        <!-- Selected Moves -->
+        <div class="moves">
+
+            <div class="move">
+                <h3 style="color: black;">Your Choice</h3>
+                <p id="player-choice">-</p>
+            </div>
+
+            <div class="move">
+                <h3 style="color: black;">Computer Choice</h3>
+                <p id="computer-choice">-</p>
+            </div>
+
+        </div>
+
+        <!-- Restart Button -->
+        <button id="restart-btn" style="font-family: times new roman;">Restart Game</button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
